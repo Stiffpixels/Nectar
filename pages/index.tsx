@@ -1,7 +1,8 @@
 import Image from 'next/image'
 import Head  from 'next/head'
-import Header from './header.tsx'
-import Main from './main.tsx'
+import Header from './Components/header.tsx'
+import Main from './Components/main.tsx'
+
 
 const Home =()=>{
   return <>
@@ -17,7 +18,5 @@ const Home =()=>{
    <Main />
   </>
 }
-
-
 
 export default Home;

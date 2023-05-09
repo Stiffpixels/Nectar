@@ -1,25 +1,26 @@
-import Slider from './Components/slider.tsx'
+import Slider from './slider.tsx'
 
 const Header =()=>{
-  
   const slides= [
     {url:'/kaju_katli.webp', alt:'kaju katli on a table'},
     {url:'/motichur-laddu.jpg', alt:'motichur laddu in a plate'},
     {url:'/milk_cake.jpeg', alt:'milk cake on a table'}
     ]
+    const menuClick = ()=>{
+      const nav = document.querySelector("nav");
+        if(nav.classList.contains("menu-active")){
+          nav.classList.remove("menu-active");
+        }else{
+          nav.classList.add("menu-active");
+        }
+    }
   
-  return (
+  return (<>
   <header>
   <div className='container-nav'>
-  <div className='container row'>
+  <div className="container row">
   <h2 className='brand-name'>Kashi</h2>
-  <nav>
-    <ul>
-      <NavBarItem itemName='home' itemLink='#'/>
-      <NavBarItem itemName='About' itemLink='#'/>
-      <NavBarItem itemName='Contact' itemLink='#'/>
-    </ul>
-  </nav>
+  <button className="menu-btn" onClick={menuClick}><i className="fa-solid fa-bars"></i></button>
   </div>
   </div>
   
@@ -32,7 +33,14 @@ const Header =()=>{
     </div>
   </div>
   </header>
-  )
+  <nav>
+    <ul>
+      <NavBarItem itemName='home' itemLink='#'/>
+      <NavBarItem itemName='About' itemLink='#'/>
+      <NavBarItem itemName='Contact' itemLink='#'/>
+    </ul>
+  </nav>
+  </>)
 }
 
 const NavBarItem = ({itemName, itemLink})=>{
